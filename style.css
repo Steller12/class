@@ -1,6 +1,14 @@
+*{
+    align : center;
+}
 body{
     background-image: url(/python-class/assets/chainsaw-man-power-character-anime-5k-4i.jpg);
     background-size: 100%;
     background-attachment: scroll;
-    color: white;
+}
+#p1{
+    color: aqua;
+}
+.p2{
+    font-style: italic;
 }

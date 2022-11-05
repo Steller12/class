@@ -1,14 +1,7 @@
-def isRectangle(a, b, c, d):
-    if (a == b and d == c) or (a == c and b == d) or (a == d and b == c):
-        return True
-    else:
-        return False
-# Driver code
-a= int(input())
-b= int(input())
-c=int(input())
-d=int(input())
-if isRectangle(a,b,c,d):
-    print("possible")
-else:
-    print("not possible")
+import sys
+def sumrec(num):
+    if  num==1 :
+        return num 
+    return num * sumrec(num-1)
+ans=sumrec(5)
+print(ans)

@@ -1,6 +1,7 @@
 # contains multiple values in single variable
 # unordered
-# unchangable
+# unchangable but we can add
 # duplicates are not allowed
-myset={"car","bike","boat","car"}
-print(myset)
+# print(myset)
+# myset={"car","bike","boat","car"}
+# print("bike" in myset)

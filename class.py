@@ -5,12 +5,10 @@
 #     def info (self):
 #         pass
 #         print(self.name,self.rollno)
-
 # student1=student("Pushp","50")
 # student2=student("Rishav","35")
 # student1.info()
 # student2.info()
-
 # class person:
 #     def __init__(self):
 #         self.name="ishan"
@@ -58,7 +56,6 @@
 #         print("This is method 1")
 #     def method2(self):
 #         print("this is method 2")
-
 # class B(A):
 #     def __init__(self):
 #         super().__init__()
@@ -81,23 +78,28 @@
 #     def eyes(self):
 #         print("Bird has two eyes")
 #     def fly(self):
-#         print("Most of the birds can fly")
-    
+#         print("Most of the birds can fly") 
 # class Sparrow(Bird):
 #     def fly(self):
 #         print("Sparrow can fly")
-
 # class Ostrich(Bird):
 #     def fly(self):
 #         print("Ostrich can not fly")
-
 # bird = Bird()
 # sparrow = Sparrow()
 # ostrich = Ostrich()
-
 # bird.eyes()
 # bird.wings()
 # bird.fly()
 # ostrich.fly()
 # class car:
 #     pass
+class vehicle:
+    def __init__(self,name,milage):
+        self.name=name
+        self.milage=milage
+class bus(vehicle):
+    pass
+
+obj=bus("Abc",10)
+print(obj.milage,obj.name)

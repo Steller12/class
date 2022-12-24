@@ -56,13 +56,16 @@
 
 #finally
     #this will execute regardless the result of try and except
-try:
-    f=open("list.py")
-    try:
-        f.write("Abc")
-    except:
-        print("Error in file")
-    finally:
-        f.close()
-except:
-    print("Can't open file")
+# try:
+#     f=open("list.py")
+#     try:
+#         f.write("Abc")
+#     except:
+#         print("Error in file")
+#     finally:
+#         f.close()
+# except:
+#     print("Can't open file")
+a=5
+if a<10:
+    raise Exception("Value is less than 5")

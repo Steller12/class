@@ -94,12 +94,12 @@
 # ostrich.fly()
 # class car:
 #     pass
-class vehicle:
-    def __init__(self,name,milage):
-        self.name=name
-        self.milage=milage
-class bus(vehicle):
-    pass
+# class vehicle:
+#     def __init__(self,name,milage):
+#         self.name=name
+#         self.milage=milage
+# class bus(vehicle):
+#     pass
 
-obj=bus("Abc",10)
-print(obj.milage,obj.name)
+# obj=bus("Abc",10)
+# print(obj.milage,obj.name)

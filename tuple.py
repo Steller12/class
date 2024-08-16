@@ -42,3 +42,14 @@
 # tuple2=(1,[6,7],2,3,4)
 # tuple2[1][0]=8
 # print(tuple2)
+r = int(input("Length of upper base of triangle = "))
+
+print("Hollow Inverted Right Triangle Star Pattern") 
+
+for i in range(1, r + 1):
+    for j in range(1, 2*r):
+        if (i == 1 and not j%2 == 0) or i == j or i + j == r*2:
+            print('*', end = '')
+        else:
+            print(' ', end = '')
+    print()

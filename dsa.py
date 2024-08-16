@@ -31,3 +31,9 @@
 arr=[1,2,3,4,5,6,7,8,9,10]
 arr.insert(2,100)
 print(arr)
+# b=2
+# a=len(arr)
+# while(a!=b):
+#     arr[a]=arr[a-1]
+#     a=a-1
+# print(arr)

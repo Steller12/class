@@ -28,12 +28,28 @@
 
 
 #insertion and deletion
-arr=[1,2,3,4,5,6,7,8,9,10]
-arr.insert(2,100)
-print(arr)
+# arr=[1,2,3,4,5,6,7,8,9,10]
+# arr.insert(2,100)
+# print(arr)
 # b=2
 # a=len(arr)
 # while(a!=b):
 #     arr[a]=arr[a-1]
 #     a=a-1
 # print(arr)
+
+
+
+# 1374. Generate a String With Characters That Have Odd Counts
+# n=4
+# if n%2==0:
+#     print("a"*(n-1)+"b")
+# else:
+#     print("a"*n)
+
+
+#564. Find the Closest Palindrome
+a="1234"
+n=len(a)
+m= n+1//2
+print(m)

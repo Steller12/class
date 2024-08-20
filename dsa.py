@@ -49,7 +49,58 @@
 
 
 #564. Find the Closest Palindrome
-a="1234"
-n=len(a)
-m= n+1//2
-print(m)
+# a="1234"
+# n=len(a)
+# m= n+1//2
+# print(m)
+
+
+
+# #armstrong numbers
+# n=153
+# temp=n
+# x=len(str(n))
+# print(x)
+# res=0
+# while(n>0):
+#     a=n%10
+#     n=n//10
+#     res=res+(a**x)
+# if(temp==res):
+#     print("yes")
+# else:
+#     print("false")
+
+
+
+#73 set matrices zero
+# x=[[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+# m,n=len(x), len(x[0])
+# row,column=[1]*m,[1]*n
+# # for getting a flag 
+# for i in range(m):
+#     for j in range(n):
+#         if x[i][j]==0:
+#             row[i]=0
+#             column[j]=0
+# # for row
+# for i in range(m):
+#     if row[i]==0:
+#         x[i]=[0]*n
+# for i in range(n):
+#     if column[i]==0:
+#         for j in range(m):
+#             x[j][i]=0
+# print(x)
+
+
+
+#0118 pascals triangle
+# n = 5
+# matrix = [[1] * (i + 1) for i in range(n)]
+
+# for i in range(2, n):
+#     for j in range(1, i):
+#         matrix[i][j] = matrix[i-1][j-1] + matrix[i-1][j]
+
+# print(matrix)

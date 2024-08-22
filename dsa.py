@@ -107,7 +107,7 @@
 
 
 
-#prime numner
+#prime numner brute force
 # n=int(input())
 # flag=True
 # if (n<=1):
@@ -118,9 +118,29 @@
 #         flag=False
 # print(flag)
 
-
+#prime number efficient
 # root=int(n**(1/2))
 # for i in range(2,root):
 #     if n%i==0:
 #         flag=False
 # print(flag)
+
+
+
+#prime numbers more optimized
+# def isprime(n):
+#     if n<=1:
+#         return False
+#     if n<=3:
+#         return True
+#     if n%2==0 or n%3==0:
+#         return False
+#     for i in range(5,int(n**(1/2)),6):
+#         if n%i==0 or n%(i+2)==0:
+#             return False
+#     return True
+
+
+# n=int(input("Enter the number to be checked:"))
+# print(isprime(n))
+

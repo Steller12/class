@@ -108,12 +108,19 @@
 
 
 #prime numner
-n=int(input())
-flag=True
-if (n<=1):
-    flag=False
+# n=int(input())
+# flag=True
+# if (n<=1):
+#     flag=False
 
-for i in range(2,n):
-    if n%i==0:
-        flag=False
-print(flag)
+# for i in range(2,n):
+#     if n%i==0:
+#         flag=False
+# print(flag)
+
+
+# root=int(n**(1/2))
+# for i in range(2,root):
+#     if n%i==0:
+#         flag=False
+# print(flag)

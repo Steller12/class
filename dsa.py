@@ -104,3 +104,16 @@
 #         matrix[i][j] = matrix[i-1][j-1] + matrix[i-1][j]
 
 # print(matrix)
+
+
+
+#prime numner
+n=int(input())
+flag=True
+if (n<=1):
+    flag=False
+
+for i in range(2,n):
+    if n%i==0:
+        flag=False
+print(flag)

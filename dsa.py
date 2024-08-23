@@ -144,3 +144,18 @@
 # n=int(input("Enter the number to be checked:"))
 # print(isprime(n))
 
+#fernat's little theorem
+# def fernat(p,a):
+#     for i in range(2,int(p**(1/2))):
+#         if p%i==0:
+#             return "P is not a prime number"
+#     if p%a==0:
+#         return "p is divisible by a"
+#     if ((a**(p-1))%p==1):
+#         return True
+#     return False
+# p=int(input("enter the value of p:"))
+# a=int(input("enter the value of a:"))
+# print(fernat(p,a))
+
+

@@ -159,3 +159,16 @@
 # print(fernat(p,a))
 
 
+#189. Rotate Array
+
+def rotate(k,n):
+    while k>0:
+        temp=n[-1]
+        for i in range(len(n)-1):
+            n[i+1]=n[i]
+        n[0]=temp
+        k=k-1
+    return n
+n=[1,2,3,4,5,6,7]
+k=3
+print(rotate(k,n))

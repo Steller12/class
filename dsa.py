@@ -159,16 +159,55 @@
 # print(fernat(p,a))
 
 
-#189. Rotate Array
+# #189. Rotate Array
 
-def rotate(k,n):
-    while k>0:
-        temp=n[-1]
-        for i in range(len(n)-1):
-            n[i+1]=n[i]
-        n[0]=temp
-        k=k-1
-    return n
-n=[1,2,3,4,5,6,7]
-k=3
-print(rotate(k,n))
+# def rotate(k,n):
+#     while k>0:
+#         temp=n[-1]
+#         for i in range(len(n)-1):
+#             n[i+1]=n[i]
+#         n[0]=temp
+#         k=k-1
+#     return n
+# n=[1,2,3,4,5,6,7]
+# k=3
+# print(rotate(k,n))
+
+
+
+#56. merge intervals 
+# arr=[[1,3],[2,6],[8,10],[8,9],[9,11],[15,18],[2,4],[16,17]]
+# for i in range(0,len(arr)):
+#     for j in range(0,len(arr)-i-1):
+#         if arr[j][0]>arr[j+1][0]:
+#             arr[j],arr[j+1]=arr[j+1],arr[j]
+# for i in range(0,len(arr)-1):
+#     if(arr[i][1]>=arr[i+1][0]):
+#         a=[arr[i][0],arr[i+1][1]]
+#         arr.pop(i+1)
+#         arr.append(a)
+# print(arr)
+
+
+
+
+
+#sieve of eratosthenes
+def SieveOfEratosthenes(num):
+    prime = [True for i in range(num + 1)]
+    p = 2  
+
+    while p * p <= num:
+        if prime[p]:
+            for i in range(p * p, num + 1, p):
+                prime[i] = False
+        p += 1
+
+    # Print all prime numbers
+    for p in range(2, num + 1):
+        if prime[p]:
+            print(p)
+
+num = 25
+print(num)
+SieveOfEratosthenes(num)

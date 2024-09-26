@@ -192,22 +192,124 @@
 
 
 
-#sieve of eratosthenes
-def SieveOfEratosthenes(num):
-    prime = [True for i in range(num + 1)]
-    p = 2  
+#sieve of eratosthenes nloglogn
+# def SieveOfEratosthenes(num):
+#     prime = [True for i in range(num + 1)]
+#     p = 2  
 
-    while p * p <= num:
-        if prime[p]:
-            for i in range(p * p, num + 1, p):
-                prime[i] = False
-        p += 1
+#     while p * p <= num:
+#         if prime[p]:
+#             for i in range(p * p, num + 1, p):
+#                 prime[i] = False
+#         p += 1
 
-    # Print all prime numbers
-    for p in range(2, num + 1):
-        if prime[p]:
-            print(p)
+#     # Print all prime numbers
+#     for p in range(2, num + 1):
+#         if prime[p]:
+#             print(p)
 
-num = 25
-print(num)
-SieveOfEratosthenes(num)
+# num = 30
+# print(num)
+# SieveOfEratosthenes(num)
+
+
+
+#fermat factoring method
+# n=3009
+# y=0
+# for i in range(1,n):
+#     if (((n+i*i)**(1/2)).is_integer()):
+#         y=i
+#         break
+# print((n+y*y)**(1/2)-y,(n+y*y)**(1/2)+y)
+# print(y)
+
+
+
+
+#segmented sieve
+
+
+
+
+
+#sieve of atkin
+
+
+
+
+
+
+
+# #linked list
+# class node:
+#     def __init__(self,data):
+#         self.data=data
+#         self.ref=None
+# class linked_list:
+#     def __init__(self):
+#         self.head=None
+#     # def remove():
+#     def traverse(self):
+#         if self.head is None:
+#             print("empty")
+#         else:
+#             n=self.head
+#             while n is not None:
+#                 print(n.data,"---->",end=" ")
+#                 n=n.ref
+#     def insert_begin(self,data):
+#         new_node=node(data)
+#         new_node.ref=self.head
+#         self.head=new_node
+#     def insert_end(self,data):
+#         new_node = node(data)
+#         if self.head is None:
+#             self.head = new_node
+#         else:
+#             n = self.head
+#             while n.ref is not None:
+#                 n = n.ref
+#             n.ref = new_node
+
+            
+
+# l=linked_list()
+# l.insert_begin(10)
+# l.insert_begin(100)
+# l.insert_begin(1000)
+# l.insert_end(1)
+# l.traverse()
+
+
+
+# arr=[3,1,4,1,2,100]
+# n=len(arr)
+# sum=0
+# for i in range(0,n):
+#     sum=sum+arr[i]
+# left=0
+# ind=0
+# for i in range(0,n):
+#     left=left+arr[i]
+#     if(left>(sum-left)):
+#         ind=i
+#         if(sum-left==0):
+#             ind=-1
+#         break
+# print(ind)
+
+# arr=[1,3,4,8]
+# queries=[[0,1],[1,2],[0,3],[3,3]]
+# ans=[]
+# for i in range(0,len(queries)):
+#     temp=arr[queries[i][0]]
+#     print(temp)
+#     for j in range(queries[i][0]+1,queries[i][1]):
+#         temp=(temp^arr[j])
+#     ans.append(temp)
+# print(ans)
+# print(1^3)
+
+
+

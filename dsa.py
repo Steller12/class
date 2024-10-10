@@ -241,7 +241,7 @@
 
 
 
-# #linked list
+# # #linked list
 # class node:
 #     def __init__(self,data):
 #         self.data=data
@@ -313,3 +313,91 @@
 
 
 
+# import math
+
+# # Function to compute the greatest common divisor
+# def gcd(a, b):
+#     while b != 0:
+#         a, b = b, a % b
+#     return a
+
+# # Function to compute the modular inverse
+# def mod_inverse(e, phi):
+#     for d in range(1, phi):
+#         if (e * d) % phi == 1:
+#             return d
+#     return None
+
+# # RSA encryption and decryption implementation
+# def rsa_decrypt(p, q, e, C):
+#     # Step 1: Calculate n = p * q
+#     n = p * q
+    
+#     # Step 2: Calculate φ(n) = (p - 1) * (q - 1)
+#     phi = (p - 1) * (q - 1)
+    
+#     # Step 3: Calculate d as the modular inverse of e under φ(n)
+#     d = mod_inverse(e, phi)
+    
+#     # Step 4: Decrypt the message M = (C^d) % n
+#     M = pow(C, d, n)
+    
+#     return M
+
+# # Example usage
+# encrypted_message = int(input())
+# e = int(input()) 
+# p = int(input())  
+# q = int(input()) 
+
+
+# decrypted_message = rsa_decrypt(p, q, e, encrypted_message)
+# print(decrypted_message)
+
+
+
+
+
+
+# a=str(input())
+# cnt=0
+# print(sorted(a))
+# for i in range(len(a)):
+#     if i==0:
+#         if a[i]!=a[i+1]:
+#             cnt+=1
+#     elif i==len(a)-1:
+#         if a[i]!=a[i-1]:
+#             cnt+=1
+#     elif a[i]!=a[i+1] and a[i]!=a[i-1]:
+#         cnt+=1
+#     else:
+#         continue
+# print(cnt)
+
+
+
+
+# arr=[60,14,25,45]
+# arr2=[]
+# target=int(input())
+# for i in range(len(arr)):
+#     if arr[i]<50:
+#         arr2.append(target)
+#         arr2.append(arr[i])
+#     else:
+#         arr2.append(arr[i])
+# print(arr2)
+
+
+# s=0
+# a=[1,4,5,3,2,7,6]
+# b=[]
+# for i in range(len(a)):
+#     s+=a[i]
+#     b.append(s)
+# print(b)
+
+
+
+#unbounded knapsack problems

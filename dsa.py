@@ -401,3 +401,23 @@
 
 
 #median of two sorted arrays
+#given an array of integers and an integer k , return the total number of subarrays whose sum equals to k 
+def subarraySum(nums, k):
+    cum_sum_freq = {0: 1} 
+
+    total_count = 0
+    cumulative_sum = 0
+
+    for num in nums:
+        cumulative_sum += num
+        if cumulative_sum - k in cum_sum_freq:
+            total_count += cum_sum_freq[cumulative_sum - k]
+
+        cum_sum_freq[cumulative_sum] = cum_sum_freq.get(cumulative_sum, 0) + 1
+
+    return total_count
+
+my_array = [1, 2, 3, 4, 5]
+target_sum = 9
+result = subarraySum(my_array, target_sum)
+print(f"Total subarrays with sum {target_sum}: {result}")

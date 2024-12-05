@@ -214,15 +214,15 @@
 
 
 
-#fermat factoring method
-# n=3009
-# y=0
-# for i in range(1,n):
-#     if (((n+i*i)**(1/2)).is_integer()):
-#         y=i
-#         break
-# print((n+y*y)**(1/2)-y,(n+y*y)**(1/2)+y)
-# print(y)
+# fermat factoring method
+n=3009
+y=0
+for i in range(1,n):
+    if (((n+i*i)**(1/2)).is_integer()):
+        y=i
+        break
+print((n+y*y)**(1/2)-y,(n+y*y)**(1/2)+y)
+print(y)
 
 
 
@@ -400,24 +400,175 @@
 
 
 
-#median of two sorted arrays
 #given an array of integers and an integer k , return the total number of subarrays whose sum equals to k 
-def subarraySum(nums, k):
-    cum_sum_freq = {0: 1} 
+# def subarraySum(nums, k):
+#     cum_sum_freq = {0: 1} 
 
-    total_count = 0
-    cumulative_sum = 0
+#     total_count = 0
+#     cumulative_sum = 0
 
-    for num in nums:
-        cumulative_sum += num
-        if cumulative_sum - k in cum_sum_freq:
-            total_count += cum_sum_freq[cumulative_sum - k]
+#     for num in nums:
+#         cumulative_sum += num
+#         if cumulative_sum - k in cum_sum_freq:
+#             total_count += cum_sum_freq[cumulative_sum - k]
 
-        cum_sum_freq[cumulative_sum] = cum_sum_freq.get(cumulative_sum, 0) + 1
+#         cum_sum_freq[cumulative_sum] = cum_sum_freq.get(cumulative_sum, 0) + 1
 
-    return total_count
+#     return total_count
 
-my_array = [1, 2, 3, 4, 5]
-target_sum = 9
-result = subarraySum(my_array, target_sum)
-print(f"Total subarrays with sum {target_sum}: {result}")
+# my_array = [1, 2, 3, 4, 5]
+# target_sum = 9
+# result = subarraySum(my_array, target_sum)
+# print(f"Total subarrays with sum {target_sum}: {result}")
+
+
+
+#inserting an element to the array
+# arr=[5,6,7,8,9,4]
+# arr.append(3)
+# arr.insert(2,4)
+# print(arr)
+
+
+
+#program to delete an element from the array
+# arr.remove(5)
+# print(arr)
+
+
+#program to perform array arrangement
+# even=[x for x in arr if x%2==0]
+# odd=[x for x in arr if x%2!=0]
+# arr= even+odd
+# print(arr)
+
+
+
+
+#program to print matrix in a spiral form 
+# class stack:
+#     def __init__(self) -> None:
+#         self.stack=[]
+#     def push(self,x):
+#         self.stack.append(x)
+#     def pop(self):
+#         if len(self.stack)!=0:
+#             return self.stack.pop()
+#         return("pop from empty stack")
+#     def peek(self):
+#         if len(self.stack)!=0:
+#             return self.stack[-1]
+#         return("peek from empty stack")
+
+
+# s=stack()
+# s.push(1)
+# s.push(2)
+# s.push(3)
+# print(s.pop())
+# print(s.pop())
+# print(s.peek())
+# print(s.pop())
+# print(s.pop())
+# print(s.peek())
+
+
+
+
+# def left_most_digit(arr):
+#     arr2=[]
+#     for i in arr:
+#         arr2.append(int(str(i)[0]))
+#     arr2.sort(reverse=True)
+#     arr2[-1],arr2[-2]=arr2[-2],arr2[-1]
+#     ans=0
+#     for i in arr2:
+#         ans=ans*10+i
+#     return ans
+# arr=[1,21,321,449,54]
+# print(left_most_digit(arr))
+
+
+
+
+
+# n=100
+# prime=[True for i in range(n+1)]
+# p=2
+# while (p*p<=n):
+#     if (prime[p]==True):
+#         for i in range(p*p,n+1,p):
+#             prime[i]=False
+#     p+=1
+# for i in range(2,n+1):
+#     if prime[i]:
+#         print(i)
+
+
+# Python program to print all
+# primes smaller than or equal to
+# n using Sieve of Eratosthenes
+
+
+# def SieveOfEratosthenes(n):
+#     prime = [True for i in range(n+1)]
+#     p = 2
+#     while (p * p <= n):
+#         if (prime[p] == True):
+#             for i in range(p * p, n+1, p):
+#                 prime[i] = False
+#         p += 1
+#     for p in range(2, n+1):
+#         if prime[p]:
+#             print(p)
+
+
+# # Driver code
+# if __name__ == '__main__':
+#     n = 100
+#     print("than or equal to", n)
+#     SieveOfEratosthenes(n)
+
+
+
+
+
+# # Python3 program to print all primes 
+# # smaller than n, using segmented sieve 
+# import math
+# prime = []
+# def simpleSieve(limit):
+#     mark = [True for i in range(limit + 1)]
+#     p = 2
+#     while (p * p <= limit):
+#         if (mark[p] == True): 
+#             for i in range(p * p, limit + 1, p): 
+#                 mark[i] = False  
+#         p += 1
+#     for p in range(2, limit): 
+#         if mark[p]:
+#             prime.append(p)
+#             print(p,end = " ")
+# def segmentedSieve(n):
+#     limit = int(math.floor(math.sqrt(n)) + 1)
+#     simpleSieve(limit)
+#     low = limit
+#     high = limit * 2
+#     while low < n:
+#         if high >= n:
+#             high = n
+#         mark = [True for i in range(limit + 1)]
+#         for i in range(len(prime)):
+#             loLim = int(math.floor(low / prime[i]) * prime[i])
+#             if loLim < low:
+#                 loLim += prime[i]
+#             for j in range(loLim, high, prime[i]):
+#                 mark[j - low] = False
+#         for i in range(low, high):
+#             if mark[i - low]:
+#                 print(i, end = " ")
+#         low = low + limit
+#         high = high + limit
+# n = 100
+# print("Primes smaller than", n, ":")
+# segmentedSieve(100)

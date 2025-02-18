@@ -213,65 +213,6 @@
 # SieveOfEratosthenes(num)
 
 
-
-# fermat factoring method
-n=3009
-y=0
-for i in range(1,n):
-    if (((n+i*i)**(1/2)).is_integer()):
-        y=i
-        break
-print((n+y*y)**(1/2)-y,(n+y*y)**(1/2)+y)
-print(y)
-
-
-
-#quick sort
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + middle + quick_sort(right)
-
-# Example usage
-arr = [3, 6, 8, 10, 1, 2, 1]
-print("Quick Sort:", quick_sort(arr))
-
-
-
-#merge sort
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-
-    def merge(left, right):
-        result = []
-        i = j = 0
-        while i < len(left) and j < len(right):
-            if left[i] < right[j]:
-                result.append(left[i])
-                i += 1
-            else:
-                result.append(right[j])
-                j += 1
-        result.extend(left[i:])
-        result.extend(right[j:])
-        return result
-
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-    return merge(left, right)
-
-# Example usage
-arr = [3, 6, 8, 10, 1, 2, 1]
-print("Merge Sort:", merge_sort(arr))
-
-
-
 #segmented sieve
 
 
@@ -617,3 +558,48 @@ print("Merge Sort:", merge_sort(arr))
 # n = 100
 # print("Primes smaller than", n, ":")
 # segmentedSieve(100)
+
+
+
+def insert_min_heap(heap, element):
+    heap.append(element)
+    _heapify_up(heap, len(heap) - 1) 
+
+def _heapify_up(heap, index):
+    while index > 0:
+        parent_index = (index - 1) // 2  
+        if heap[index] < heap[parent_index]:
+            heap[index], heap[parent_index] = heap[parent_index], heap[index]
+            index = parent_index  
+        else:
+            break  
+
+my_heap = [10, 20, 30, 40, 50]
+
+def build_min_heap(arr):
+    n = len(arr)
+    for i in range(n // 2 - 1, -1, -1): 
+        _heapify_down(arr, n, i)  
+
+def _heapify_down(arr, n, i):  
+    smallest = i  
+    left = 2 * i + 1
+    right = 2 * i + 2
+
+    if left < n and arr[left] < arr[smallest]:
+        smallest = left
+
+    if right < n and arr[right] < arr[smallest]:
+        smallest = right
+
+    if smallest != i:
+        arr[i], arr[smallest] = arr[smallest], arr[i]
+
+        _heapify_down(arr, n, smallest)
+
+build_min_heap(my_heap)
+
+print(f"Original heap: {my_heap}")
+a= int(input())
+insert_min_heap(my_heap, a)
+print(f"Heap after inserting {a}: {my_heap}")

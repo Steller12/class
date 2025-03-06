@@ -561,45 +561,107 @@
 
 
 
-def insert_min_heap(heap, element):
-    heap.append(element)
-    _heapify_up(heap, len(heap) - 1) 
+# def insert_min_heap(heap, element):
+#     heap.append(element)
+#     heapify_up(heap, len(heap) - 1) 
 
-def _heapify_up(heap, index):
-    while index > 0:
-        parent_index = (index - 1) // 2  
-        if heap[index] < heap[parent_index]:
-            heap[index], heap[parent_index] = heap[parent_index], heap[index]
-            index = parent_index  
-        else:
-            break  
+# def heapify_up(heap, index):
+#     while index > 0:
+#         parent_index = (index - 1) // 2  
+#         if heap[index] < heap[parent_index]:
+#             heap[index], heap[parent_index] = heap[parent_index], heap[index]
+#             index = parent_index  
+#         else:
+#             break  
 
-my_heap = [10, 20, 30, 40, 50]
+# my_heap = [10, 20, 30, 40, 50]
 
-def build_min_heap(arr):
-    n = len(arr)
-    for i in range(n // 2 - 1, -1, -1): 
-        _heapify_down(arr, n, i)  
+# def build_min_heap(arr):
+#     n = len(arr)
+#     for i in range(n // 2 - 1, -1, -1): 
+#         heapify_down(arr, n, i)  
 
-def _heapify_down(arr, n, i):  
-    smallest = i  
-    left = 2 * i + 1
-    right = 2 * i + 2
+# def heapify_down(arr, n, i):  
+#     smallest = i  
+#     left = 2 * i + 1
+#     right = 2 * i + 2
 
-    if left < n and arr[left] < arr[smallest]:
-        smallest = left
+#     if left < n and arr[left] < arr[smallest]:
+#         smallest = left
 
-    if right < n and arr[right] < arr[smallest]:
-        smallest = right
+#     if right < n and arr[right] < arr[smallest]:
+#         smallest = right
 
-    if smallest != i:
-        arr[i], arr[smallest] = arr[smallest], arr[i]
+#     if smallest != i:
+#         arr[i], arr[smallest] = arr[smallest], arr[i]
 
-        _heapify_down(arr, n, smallest)
+#         heapify_down(arr, n, smallest)
 
-build_min_heap(my_heap)
+# build_min_heap(my_heap)
 
-print(f"Original heap: {my_heap}")
-a= int(input())
-insert_min_heap(my_heap, a)
-print(f"Heap after inserting {a}: {my_heap}")
+# print(f"Original heap: {my_heap}")
+# a= int(input())
+# insert_min_heap(my_heap, a)
+# print(f"Heap after inserting {a}: {my_heap}")
+
+
+
+
+
+# def heapify(heap, n, i):
+#     smallest = i
+#     left = 2 * i + 1
+#     right = 2 * i + 2
+
+#     if left < n and heap[left] < heap[smallest]:
+#         smallest = left
+
+#     if right < n and heap[right] < heap[smallest]:
+#         smallest = right
+
+#     if smallest != i:
+#         heap[i], heap[smallest] = heap[smallest], heap[i]
+#         heapify(heap, n, smallest)
+
+# heap = [10, 9, 7, 6, 8]
+# n = len(heap)
+# index = 0
+
+# heapify(heap, n, index)
+# print(f"Heap after heapify: {heap}")
+
+
+
+from collections import deque
+
+class node:
+    def __init__(self, val):
+        self.data=val
+        self.left=None
+        self.right=None
+def issym(root):
+    if root is None:
+        return True
+    q=deque()
+    q.append(root.left)
+    q.append(root.right)
+    while q:
+        n1=q.popleft()
+        n2=q.popleft()
+        if n1 is None and n2 is None:
+            continue
+        if n1 is None or n2 is None or n1!=n2:
+            return False
+        q.append(n1.left)
+        q.append(n2.right)
+        q.append(n1.right)
+        q.append(n2.left)
+    return True
+root = node(1)
+root.left = node(2)
+root.right = node(2)
+root.left.left = node(3)
+root.left.right = node(4)
+root.right.left = node(4)
+root.right.right = node(3)
+print(issym(root))

@@ -1,3 +1,5 @@
+# import statistics
+
 # ques: capitalize the first letter of a string
 # title="L hV"
 # x=title.split()
@@ -632,36 +634,73 @@
 
 
 
-from collections import deque
+# from collections import deque
 
-class node:
-    def __init__(self, val):
-        self.data=val
-        self.left=None
-        self.right=None
-def issym(root):
-    if root is None:
-        return True
-    q=deque()
-    q.append(root.left)
-    q.append(root.right)
-    while q:
-        n1=q.popleft()
-        n2=q.popleft()
-        if n1 is None and n2 is None:
-            continue
-        if n1 is None or n2 is None or n1!=n2:
-            return False
-        q.append(n1.left)
-        q.append(n2.right)
-        q.append(n1.right)
-        q.append(n2.left)
-    return True
-root = node(1)
-root.left = node(2)
-root.right = node(2)
-root.left.left = node(3)
-root.left.right = node(4)
-root.right.left = node(4)
-root.right.right = node(3)
-print(issym(root))
+# class node:
+#     def __init__(self, val):
+#         self.data=val
+#         self.left=None
+#         self.right=None
+# def issym(root):
+#     if root is None:
+#         return True
+#     q=deque()
+#     q.append(root.left)
+#     q.append(root.right)
+#     while q:
+#         n1=q.popleft()
+#         n2=q.popleft()
+#         if n1 is None and n2 is None:
+#             continue
+#         if n1 is None or n2 is None or n1!=n2:
+#             return False
+#         q.append(n1.left)
+#         q.append(n2.right)
+#         q.append(n1.right)
+#         q.append(n2.left)
+#     return True
+# root = node(1)
+# root.left = node(2)
+# root.right = node(2)
+# root.left.left = node(3)
+# root.left.right = node(4)
+# root.right.left = node(4)
+# root.right.right = node(3)
+# print(issym(root))
+
+# def topKFrequent(nums, k):
+#     d={}
+#     ans=[]
+#     for i in nums:
+#         if i in d.keys():
+#             d[i]+=1
+#         else:
+#             d[i]=1
+    
+#     return d
+
+
+# nums=[1,1,1,2,2,2,2,2,3,3,3,1,3]
+# k=2
+# print(topKFrequent(nums, k))
+
+# if __name__=="__main__":
+#     n=int(input())
+#     arr=list(map(int,input().split()))
+#     arr.sort()
+#     print(arr)
+#     print(arr[n//2])
+
+
+
+# a=[2,4,6,8]
+# print(statistics.median(a))
+
+
+
+# a=int(input())
+# print(a)
+
+
+
+
